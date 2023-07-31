@@ -18,6 +18,10 @@ config MAINBOARD_PART_NUMBER
 	string
 	default "X99-QD4"
 
+config MAX_CPUS
+	int
+	default 44
+
 config USBDEBUG_HCD_INDEX # FIXME: check this
 	int
 	default 2
