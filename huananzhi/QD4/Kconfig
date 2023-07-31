@@ -10,6 +10,9 @@ config BOARD_SPECIFIC_OPTIONS
 	select SERIRQ_CONTINUOUS_MODE
 	select SOUTHBRIDGE_INTEL_LYNXPOINT
 
+config CBFS_SIZE
+	default 0x800000
+
 config MAINBOARD_DIR
 	string
 	default "huananzhi/QD4"
