@@ -1,0 +1,2 @@
+config BOARD_HUANANZHI_
+	bool ""
