@@ -13,6 +13,9 @@ config BOARD_SPECIFIC_OPTIONS
 	select SOUTHBRIDGE_INTEL_LYNXPOINT
 	select SUPERIO_NUVOTON_NCT5539D # nct5532d in fact
 
+config CBFS_SIZE
+	default 0x800000
+
 config MAINBOARD_DIR
 	default "huananzhi/x99-qd4"
 
