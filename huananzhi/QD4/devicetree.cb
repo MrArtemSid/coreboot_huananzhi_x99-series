@@ -5,8 +5,13 @@ chip northbridge/intel/haswell # FIXME: check ec_present, usb_xhci_on_resume, gf
 		end
 	end
 	device domain 0x0 on
+		ops haswell_pci_domain_ops
+		device pci 00.0 on end # Server Host bridge
+		device pci 01.0 on end # PCIe Bridge for discrete graphics
+		device pci 01.1 on end # PCIe Port #1
+		device pci 02.0 on end # PCIe Port #2
+		device pci 03.0 off end # Mini-HD audio
 		chip southbridge/intel/lynxpoint # Intel Series 8 Lynx Point PCH
-			register "docking_supported" = "0"
 			register "gen1_dec" = "0x003c0a01"
 			register "gen2_dec" = "0x00000000"
 			register "gen3_dec" = "0x00000000"
@@ -69,23 +74,13 @@ chip northbridge/intel/haswell # FIXME: check ec_present, usb_xhci_on_resume, gf
 			device pci 1f.6 off # Thermal
 			end
 		end
-		device pci 00.0 on # Server Host bridge
+		device pci 05.2 on # Intel Corporation Xeon E7 v3/Xeon E5 v3/Core i7 RAS, Control Status and Global Errors
 		end
-		device pci 01.0 on # PCIe Bridge for discrete graphics
+		device pci 05.0 on # Intel Corporation Xeon E7 v3/Xeon E5 v3/Core i7 Address Map, VTd_Misc, System Management
 		end
-		device pci 02.0 on # Internal graphics
+		device pci 05.4 on # Intel Corporation Xeon E7 v3/Xeon E5 v3/Core i7 I/O APIC
 		end
-		device pci 03.0 on # Mini-HD audio
-		end
-		device pci 05.2 on # Unsupported PCI device 8086:2f2a
-		end
-		device pci 05.0 on # Unsupported PCI device 8086:2f28
-		end
-		device pci 05.4 on # Unsupported PCI device 8086:2f2c
-		end
-		device pci 01.1 on
-		end
-		device pci 05.1 on # Unsupported PCI device 8086:2f29
+		device pci 05.1 on # Intel Corporation Xeon E7 v3/Xeon E5 v3/Core i7 Hot Plug
 		end
 	end
 end
