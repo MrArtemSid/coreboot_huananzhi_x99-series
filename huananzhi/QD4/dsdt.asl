@@ -1,6 +1,5 @@
 /* SPDX-License-Identifier: GPL-2.0-only */
 
-
 #include <acpi/acpi.h>
 
 DefinitionBlock(
@@ -14,11 +13,10 @@ DefinitionBlock(
 {
 	#include <acpi/dsdt_top.asl>
 	#include "acpi/platform.asl"
-	#include <cpu/intel/common/acpi/cpu.asl>
 	#include <southbridge/intel/common/acpi/platform.asl>
-	/* global NVS and variables. */
 	#include <southbridge/intel/lynxpoint/acpi/globalnvs.asl>
 	#include <southbridge/intel/common/acpi/sleepstates.asl>
+	#include <cpu/intel/common/acpi/cpu.asl>
 
 	Device (\_SB.PCI0)
 	{
