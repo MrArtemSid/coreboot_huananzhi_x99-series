@@ -1,2 +1,2 @@
-config BOARD_HUANANZHI_
-	bool ""
+config VENDOR_HUANANZHI
+	bool "HUANANZHI"

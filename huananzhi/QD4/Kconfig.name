@@ -1,0 +1,2 @@
+config BOARD_HUANANZHI_QD4
+	bool ""
