@@ -1,4 +1,4 @@
-if BOARD_HUANANZHI_QD4
+if BOARD_HUANANZHI_BD4
 
 config BOARD_SPECIFIC_OPTIONS
 	def_bool y
@@ -9,18 +9,18 @@ config BOARD_SPECIFIC_OPTIONS
 	select NORTHBRIDGE_INTEL_HASWELL
 	select SERIRQ_CONTINUOUS_MODE
 	select SOUTHBRIDGE_INTEL_LYNXPOINT
-	select SUPERIO_NUVOTON_NCT5539D # nct5532d in fact
+	select SUPERIO_NUVOTON_NCT6779D
 
 config CBFS_SIZE
 	default 0x800000
 
 config MAINBOARD_DIR
 	string
-	default "huananzhi/QD4"
+	default "huananzhi/BD4"
 
 config MAINBOARD_PART_NUMBER
 	string
-	default "X99-QD4"
+	default "X99-BD4"
 
 config MAX_CPUS
 	int

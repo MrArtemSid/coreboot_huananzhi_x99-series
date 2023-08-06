@@ -1,2 +1,2 @@
-config BOARD_HUANANZHI_QD4
-	bool "X99-QD4"
+config BOARD_HUANANZHI_BD4
+	bool "X99-BD4"
