@@ -1,0 +1,9 @@
+## SPDX-License-Identifier: GPL-2.0-or-later
+
+chip northbridge/intel/haswell
+	device domain 0x0 on
+		chip southbridge/intel/lynxpoint # Intel Series 8 Lynx Point PCH
+			device pci 1c.2 on end # PCIe Port #3
+		end
+	end
+end

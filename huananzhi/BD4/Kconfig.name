@@ -1,2 +1,0 @@
-config BOARD_HUANANZHI_BD4
-	bool "X99-BD4"

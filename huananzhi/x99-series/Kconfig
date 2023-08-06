@@ -1,0 +1,48 @@
+## SPDX-License-Identifier: GPL-2.0-only
+
+config BOARD_HUANANZHI_X99_SERIES
+	bool
+	select BOARD_ROMSIZE_KB_16384
+	select CPU_INTEL_HASWELL
+	select HAVE_ACPI_RESUME
+	select HAVE_ACPI_TABLES
+	select NORTHBRIDGE_INTEL_HASWELL
+	select SERIRQ_CONTINUOUS_MODE
+	select SOUTHBRIDGE_INTEL_LYNXPOINT
+
+config BOARD_HUANANZHI_BD4
+	select BOARD_HUANANZHI_X99_SERIES
+	select SUPERIO_NUVOTON_NCT6779D
+
+config BOARD_HUANANZHI_QD4
+	select BOARD_HUANANZHI_X99_SERIES
+	select SUPERIO_NUVOTON_NCT5539D # nct5532d in fact
+
+if BOARD_HUANANZHI_X99_SERIES
+
+config CBFS_SIZE
+	default 0x800000
+
+config MAINBOARD_DIR
+	default "huananzhi/x99-series"
+
+config MAX_CPUS
+	int
+	default 44
+
+config VARIANT_DIR
+	default "BD4"	if BOARD_HUANANZHI_BD4
+	default "QD4"	if BOARD_HUANANZHI_QD4
+
+config MAINBOARD_PART_NUMBER
+	default "X99-BD4"	if BOARD_HUANANZHI_BD4
+	default "X99-QD4"	if BOARD_HUANANZHI_QD4
+
+config OVERRIDE_DEVICETREE
+	default "variants/\$(CONFIG_VARIANT_DIR)/overridetree.cb"
+
+config USBDEBUG_HCD_INDEX # FIXME: check this
+	int
+	default 2
+
+endif
