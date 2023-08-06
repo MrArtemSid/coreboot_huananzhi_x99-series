@@ -1,0 +1,77 @@
+sudo ./autoport --input_log=logs --make_logs --coreboot_dir=../..
+WARNING: The following tool MAY cause your system to hang when it attempts to probe for graphics registers.  Having the graphics registers will help create a better port. Should autoport probe these registers?. (y/yes/n/no) Default:y
+y
+PCH sound card is card0
+Unsupported PCI device 8086:2f28
+Unsupported PCI device 8086:2f29
+Unsupported PCI device 8086:2f2a
+Unsupported PCI device 8086:2f2c
+Unknown PCI device 1002:1478, assuming removable
+Unknown PCI device 1002:1479, assuming removable
+Unknown PCI device 1002:73ff, assuming removable
+Unknown PCI device 1002:ab28, assuming removable
+Unknown PCI device 10ec:8168, assuming removable
+Unknown PCI device 8086:2f81, assuming removable
+Unknown PCI device 8086:2f36, assuming removable
+Unknown PCI device 8086:2f37, assuming removable
+Unknown PCI device 8086:2fe0, assuming removable
+Unknown PCI device 8086:2fe1, assuming removable
+Unknown PCI device 8086:2fe2, assuming removable
+Unknown PCI device 8086:2fe3, assuming removable
+Unknown PCI device 8086:2fe4, assuming removable
+Unknown PCI device 8086:2fe5, assuming removable
+Unknown PCI device 8086:2fe6, assuming removable
+Unknown PCI device 8086:2fe7, assuming removable
+Unknown PCI device 8086:2fe8, assuming removable
+Unknown PCI device 8086:2fe9, assuming removable
+Unknown PCI device 8086:2ff8, assuming removable
+Unknown PCI device 8086:2ff9, assuming removable
+Unknown PCI device 8086:2ffa, assuming removable
+Unknown PCI device 8086:2ffb, assuming removable
+Unknown PCI device 8086:2ffc, assuming removable
+Unknown PCI device 8086:2ffd, assuming removable
+Unknown PCI device 8086:2ffe, assuming removable
+Unknown PCI device 8086:2f1d, assuming removable
+Unknown PCI device 8086:2f34, assuming removable
+Unknown PCI device 8086:2f1e, assuming removable
+Unknown PCI device 8086:2f7d, assuming removable
+Unknown PCI device 8086:2f1f, assuming removable
+Unknown PCI device 8086:2fa0, assuming removable
+Unknown PCI device 8086:2f30, assuming removable
+Unknown PCI device 8086:2f60, assuming removable
+Unknown PCI device 8086:2f38, assuming removable
+Unknown PCI device 8086:2fa8, assuming removable
+Unknown PCI device 8086:2f71, assuming removable
+Unknown PCI device 8086:2faa, assuming removable
+Unknown PCI device 8086:2fab, assuming removable
+Unknown PCI device 8086:2fae, assuming removable
+Unknown PCI device 8086:2faf, assuming removable
+Unknown PCI device 8086:2fb0, assuming removable
+Unknown PCI device 8086:2fb1, assuming removable
+Unknown PCI device 8086:2fb2, assuming removable
+Unknown PCI device 8086:2fb3, assuming removable
+Unknown PCI device 8086:2fbc, assuming removable
+Unknown PCI device 8086:2fbd, assuming removable
+Unknown PCI device 8086:2fbe, assuming removable
+Unknown PCI device 8086:2fbf, assuming removable
+Unknown PCI device 8086:2f68, assuming removable
+Unknown PCI device 8086:2f79, assuming removable
+Unknown PCI device 8086:2f6a, assuming removable
+Unknown PCI device 8086:2f6b, assuming removable
+Unknown PCI device 8086:2f6e, assuming removable
+Unknown PCI device 8086:2f6f, assuming removable
+Unknown PCI device 8086:2fd0, assuming removable
+Unknown PCI device 8086:2fd1, assuming removable
+Unknown PCI device 8086:2fd2, assuming removable
+Unknown PCI device 8086:2fd3, assuming removable
+Unknown PCI device 8086:2fb8, assuming removable
+Unknown PCI device 8086:2fb9, assuming removable
+Unknown PCI device 8086:2fba, assuming removable
+Unknown PCI device 8086:2fbb, assuming removable
+Unknown PCI device 8086:2f98, assuming removable
+Unknown PCI device 8086:2f99, assuming removable
+Unknown PCI device 8086:2f9a, assuming removable
+Unknown PCI device 8086:2fc0, assuming removable
+Unknown PCI device 8086:2f9c, assuming removable
+Unknown PCI device 8086:2f88, assuming removable
+Unknown PCI device 8086:2f8a, assuming removable 
