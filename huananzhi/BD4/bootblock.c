@@ -5,9 +5,9 @@
 #include <superio/nuvoton/common/nuvoton.h>
 #include <superio/nuvoton/nct6779d/nct6779d.h>
 
-#define GLOBAL_DEV PNP_DEV(0x4e, 0)
-#define SERIAL_DEV PNP_DEV(0x4e, NCT6779D_SP1)
-#define ACPI_DEV   PNP_DEV(0x4e, NCT6779D_ACPI)
+#define GLOBAL_DEV PNP_DEV(0x2e, 0)
+#define SERIAL_DEV PNP_DEV(0x2e, NCT6779D_SP1)
+#define ACPI_DEV   PNP_DEV(0x2e, NCT6779D_ACPI)
 
 void mainboard_config_superio(void)
 {
@@ -16,7 +16,7 @@ void mainboard_config_superio(void)
 	/* Select SIO pin mux states */
 	pnp_write_config(GLOBAL_DEV, 0x1a, 0x30);
 	pnp_write_config(GLOBAL_DEV, 0x1b, 0x70);
-	pnp_write_config(GLOBAL_DEV, 0x1c, 0x08);
+	pnp_write_config(GLOBAL_DEV, 0x1c, 0x10);
 	pnp_write_config(GLOBAL_DEV, 0x1d, 0x00);
 	pnp_write_config(GLOBAL_DEV, 0x22, 0xff);
 	pnp_write_config(GLOBAL_DEV, 0x24, 0x04);
@@ -25,7 +25,7 @@ void mainboard_config_superio(void)
 
 	/* Enable keyboard wakeup, 3VSBSW# is not connected */
 	pnp_set_logical_device(ACPI_DEV);
-	pnp_write_config(ACPI_DEV, 0xe4, 0x08);
+	//pnp_write_config(ACPI_DEV, 0xe4, 0x08); need to recheck
 
 	nuvoton_pnp_exit_conf_state(GLOBAL_DEV);
 

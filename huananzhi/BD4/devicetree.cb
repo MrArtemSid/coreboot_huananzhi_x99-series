@@ -46,42 +46,46 @@ chip northbridge/intel/haswell # FIXME: check sata_port_map
 			device pci 1c.7 off end # PCIe Port #8
 			device pci 1d.0 on end # USB2 EHCI #1
 			device pci 1f.0 on # LPC bridge
-				chip superio/nuvoton/nct6779d
-					device pnp 4e.1   off end	# Parallel
-					device pnp 4e.2   on		# UART A
+				chip superio/nuvoton/nct6779d # FIXME: Need to recheck
+					device pnp 2e.1   off end	# Parallel
+					device pnp 2e.2   on		# UART A
 						io  0x60 = 0x3f8
 						irq 0x70 = 4
 					end
-					device pnp 4e.3   off end	# UART B, IR
-					device pnp 4e.5   on		# Keyboard
-						io  0x60 = 0x60
-						io  0x62 = 0x64
+					device pnp 2e.3   on		# UART B, IR
+						io  0x60 = 0x2f8
+						irq 0x70 = 3
+					end
+					device pnp 2e.5   on		# Keyboard
+						io  0x61 = 0x60
+						io  0x63 = 0x64
 						irq 0x70 = 1
 						irq 0x72 = 12
 					end
-					device pnp 4e.6   off end	# CIR
-					device pnp 4e.7   off end	# GPIO6-8
-					device pnp 4e.8   off end	# WDT1, GPIO0, GPIO1
-					device pnp 4e.108 on  end	# GPIO0
-					device pnp 4e.9   off end	# GPIO1-8
-					device pnp 4e.109 off end	# GPIO1
-					device pnp 4e.209 off end	# GPIO2
-					device pnp 4e.309 off end	# GPIO3
-					device pnp 4e.409 off end	# GPIO4
-					device pnp 4e.509 off end	# GPIO5
-					device pnp 4e.609 off end	# GPIO6
-					device pnp 4e.709 off end	# GPIO7
-					device pnp 4e.a   on  end	# ACPI
-					device pnp 4e.b   on		# H/W Monitor, FP LED
-						io  0x60 = 0x290
-						io  0x62 = 0
+					device pnp 2e.6   off end	# CIR
+					device pnp 2e.7   off end	# GPIO6-8
+					device pnp 2e.8   off end	# WDT1, GPIO0, GPIO1
+					device pnp 2e.108 on  end	# GPIO0
+					device pnp 2e.9   off end	# GPIO1-8
+					device pnp 2e.109 off end	# GPIO1
+					device pnp 2e.209 off end	# GPIO2
+					device pnp 2e.309 off end	# GPIO3
+					device pnp 2e.409 off end	# GPIO4
+					device pnp 2e.509 off end	# GPIO5
+					device pnp 2e.609 off end	# GPIO6
+					device pnp 2e.709 off end	# GPIO7
+					device pnp 2e.a   on  end	# ACPI
+					device pnp 2e.b   on		# H/W Monitor, FP LED
+						io  0x60 = 0xa20
+						io  0x62 = 0x0a
+						io  0x63 = 0x30
 						irq 0x70 = 0
 					end
-					device pnp 4e.d   off end	# WDT1
-					device pnp 4e.e   off end	# CIR Wake-up
-					device pnp 4e.f   off end	# Push-pull/Open-drain
-					device pnp 4e.14  off end	# Port 80 UART
-					device pnp 4e.16  off end	# Deep Sleep
+					device pnp 2e.d   off end	# WDT1
+					device pnp 2e.e   off end	# CIR Wake-up
+					device pnp 2e.f   off end	# Push-pull/Open-drain
+					device pnp 2e.14  off end	# Port 80 UART
+					device pnp 2e.16  off end	# Deep Sleep
 				end
 			end
 			device pci 1f.2 on end # SATA Controller (AHCI)
