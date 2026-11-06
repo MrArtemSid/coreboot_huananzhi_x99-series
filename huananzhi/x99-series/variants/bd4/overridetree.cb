@@ -1,0 +1,59 @@
+## SPDX-License-Identifier: GPL-2.0-or-later
+
+# Super I/O: superiotool on the stock BD4 firmware reports an NCT6779D
+# (ID 0xc562) at 0x2e with CR30 on for LDN 1/2/3/5/b and off for LDN 6/8/9/e/16.
+#
+# Every entry of the driver's pnp_dev_info[] is declared, including the virtual
+# GPIO devices: pnp_enable_devices() allocates an undeclared one with
+# enabled = 1, and pnp_alt_enable() then sets its CR30 bit.  `off` clears it.
+# Parallel port and UART B stay off: coreboot's LPC_EN (early_pch.c) decodes
+# neither 0x378 nor 0x2f8, and the stock DSDT describes only UART A.
+#
+# Stock 1f.2 reads MAP = 0x3c60 and PCS = 0x8303: only SATA ports 0/1 enabled.
+chip northbridge/intel/grantley
+	device domain 0x0 on
+		chip southbridge/intel/lynxpoint
+			register "sata_port_map" = "0x03"
+			device pci 1b.0 on end # HD Audio (ALC897)
+			device pci 1c.3 on end # PCIe Port 4
+			device pci 1f.0 on # LPC bridge
+				chip superio/nuvoton/nct6779d
+					device pnp 2e.1 off end # Parallel Port
+					device pnp 2e.2 on # UART A
+						io  0x60 = 0x3f8
+						irq 0x70 = 4
+					end
+					device pnp 2e.3 off end # UART B, IR
+					device pnp 2e.5 on # PS/2 KBC
+						io  0x60 = 0x60
+						io  0x62 = 0x64
+						irq 0x70 = 1
+						irq 0x72 = 12
+					end
+					device pnp 2e.6 off end # CIR
+					device pnp 2e.108 off end # GPIO0
+					device pnp 2e.308 off end # GPIO base
+					device pnp 2e.9 off end # GPIO8
+					device pnp 2e.109 off end # GPIO1
+					device pnp 2e.209 off end # GPIO2
+					device pnp 2e.309 off end # GPIO3
+					device pnp 2e.409 off end # GPIO4
+					device pnp 2e.509 off end # GPIO5
+					device pnp 2e.609 off end # GPIO6
+					device pnp 2e.709 off end # GPIO7
+					device pnp 2e.a off end # ACPI
+					device pnp 2e.b on # HW Monitor, Front Panel LED
+						io  0x60 = 0xa20
+						io  0x62 = 0xa30
+						irq 0x70 = 0
+					end
+					device pnp 2e.d off end # WDT1
+					device pnp 2e.e off end # CIR wake-up
+					device pnp 2e.f off end # GPIO push-pull/open-drain
+					device pnp 2e.14 off end # Port 80 UART
+					device pnp 2e.16 off end # Deep Sleep
+				end
+			end
+		end
+	end
+end

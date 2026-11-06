@@ -1,17 +1,17 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20221020 (64-bit version)
- * Copyright (c) 2000 - 2022 Intel Corporation
+ * AML/ASL+ Disassembler version 20251212 (64-bit version)
+ * Copyright (c) 2000 - 2025 Intel Corporation
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of dsdt.dat, Mon Jul 31 17:01:46 2023
+ * Disassembly of dsdt.dat
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x00032C46 (207942)
+ *     Length           0x0003360D (210445)
  *     Revision         0x02
- *     Checksum         0x23
+ *     Checksum         0x1B
  *     OEM ID           "ALASKA"
  *     OEM Table ID     "A M I "
  *     OEM Revision     0x01072009 (17244169)
@@ -45,6 +45,28 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
     Name (PELN, 0x10000000)
     Name (SRSI, 0xB2)
     Name (CSMI, 0x61)
+    Name (DSSP, 0x00)
+    Name (FHPP, 0x00)
+    Name (SMIA, 0xB2)
+    Name (SMIB, 0xB3)
+    Name (OFST, 0x35)
+    Name (TRST, 0x02)
+    Name (TCMF, 0x00)
+    Name (TMF1, 0x00)
+    Name (TMF2, 0x00)
+    Name (TMF3, 0x00)
+    Name (TTPF, 0x01)
+    Name (DTPT, 0x00)
+    Name (TTDP, 0x01)
+    Name (TPMB, 0xFFFFFFFF)
+    Name (TPMC, 0xFFFFFFFF)
+    Name (TPMM, 0xFED40000)
+    Name (FTPM, 0xFFFFFFFF)
+    Name (PPIM, 0x77009F98)
+    Name (PPIL, 0x1C)
+    Name (AMDT, 0x00)
+    Name (TPMF, 0x01)
+    Name (PPIV, 0x01)
     Name (SRCB, 0xFED1C000)
     Name (SRCL, 0x4000)
     Name (SUSW, 0xFF)
@@ -287,7 +309,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
     Name (SS2, 0x00)
     Name (SS3, 0x00)
     Name (SS4, 0x01)
-    Name (IOST, 0x0001)
+    Name (IOST, 0x4401)
     Name (TOPM, 0x00000000)
     Name (ROMS, 0xFFE00000)
     Name (VGAF, 0x01)
@@ -467,7 +489,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
         RASI,   1
     }
 
-    OperationRegion (PSYS, SystemMemory, 0x77042000, 0x0400)
+    OperationRegion (PSYS, SystemMemory, 0x76CF2000, 0x0400)
     Field (PSYS, ByteAcc, NoLock, Preserve)
     {
         PLAT,   32, 
@@ -2684,9 +2706,9 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
 
             Name (APTC, Buffer (0x30)
             {
-                /* 0000 */  0x00, 0x02, 0x04, 0x06, 0x08, 0x10, 0x12, 0x14,  // ........
-                /* 0008 */  0x16, 0x18, 0x01, 0x03, 0x05, 0x07, 0x09, 0x11,  // ........
-                /* 0010 */  0x13, 0x15, 0x17, 0x19, 0xFF, 0xFF, 0xFF, 0xFF,  // ........
+                /* 0000 */  0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0E,  // ........
+                /* 0008 */  0x01, 0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F,  // ........
+                /* 0010 */  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,  // ........
                 /* 0018 */  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,  // ........
                 /* 0020 */  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,  // ........
                 /* 0028 */  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF   // ........
@@ -3087,7 +3109,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     }
                 }
 
-                Processor (CP05, 0x10, 0x00000410, 0x06)
+                Processor (CP05, 0x0A, 0x00000410, 0x06)
                 {
                     Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
                     Name (_UID, "SCK0-CP05")  // _UID: Unique ID
@@ -3137,7 +3159,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     }
                 }
 
-                Processor (CP06, 0x12, 0x00000410, 0x06)
+                Processor (CP06, 0x0C, 0x00000410, 0x06)
                 {
                     Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
                     Name (_UID, "SCK0-CP06")  // _UID: Unique ID
@@ -3187,7 +3209,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     }
                 }
 
-                Processor (CP07, 0x14, 0x00000410, 0x06)
+                Processor (CP07, 0x0E, 0x00000410, 0x06)
                 {
                     Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
                     Name (_UID, "SCK0-CP07")  // _UID: Unique ID
@@ -3237,7 +3259,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     }
                 }
 
-                Processor (CP08, 0x16, 0x00000410, 0x06)
+                Processor (CP08, 0x01, 0x00000410, 0x06)
                 {
                     Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
                     Name (_UID, "SCK0-CP08")  // _UID: Unique ID
@@ -3287,7 +3309,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     }
                 }
 
-                Processor (CP09, 0x18, 0x00000410, 0x06)
+                Processor (CP09, 0x03, 0x00000410, 0x06)
                 {
                     Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
                     Name (_UID, "SCK0-CP09")  // _UID: Unique ID
@@ -3337,7 +3359,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     }
                 }
 
-                Processor (CP0A, 0x01, 0x00000410, 0x06)
+                Processor (CP0A, 0x05, 0x00000410, 0x06)
                 {
                     Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
                     Name (_UID, "SCK0-CP0A")  // _UID: Unique ID
@@ -3387,7 +3409,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     }
                 }
 
-                Processor (CP0B, 0x03, 0x00000410, 0x06)
+                Processor (CP0B, 0x07, 0x00000410, 0x06)
                 {
                     Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
                     Name (_UID, "SCK0-CP0B")  // _UID: Unique ID
@@ -3437,7 +3459,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     }
                 }
 
-                Processor (CP0C, 0x05, 0x00000410, 0x06)
+                Processor (CP0C, 0x09, 0x00000410, 0x06)
                 {
                     Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
                     Name (_UID, "SCK0-CP0C")  // _UID: Unique ID
@@ -3487,7 +3509,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     }
                 }
 
-                Processor (CP0D, 0x07, 0x00000410, 0x06)
+                Processor (CP0D, 0x0B, 0x00000410, 0x06)
                 {
                     Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
                     Name (_UID, "SCK0-CP0D")  // _UID: Unique ID
@@ -3537,7 +3559,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     }
                 }
 
-                Processor (CP0E, 0x09, 0x00000410, 0x06)
+                Processor (CP0E, 0x0D, 0x00000410, 0x06)
                 {
                     Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
                     Name (_UID, "SCK0-CP0E")  // _UID: Unique ID
@@ -3587,7 +3609,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     }
                 }
 
-                Processor (CP0F, 0x11, 0x00000410, 0x06)
+                Processor (CP0F, 0x0F, 0x00000410, 0x06)
                 {
                     Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
                     Name (_UID, "SCK0-CP0F")  // _UID: Unique ID
@@ -3637,7 +3659,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     }
                 }
 
-                Processor (CP10, 0x13, 0x00000410, 0x06)
+                Processor (CP10, 0xFF, 0x00000410, 0x06)
                 {
                     Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
                     Name (_UID, "SCK0-CP10")  // _UID: Unique ID
@@ -3687,7 +3709,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     }
                 }
 
-                Processor (CP11, 0x15, 0x00000410, 0x06)
+                Processor (CP11, 0xFF, 0x00000410, 0x06)
                 {
                     Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
                     Name (_UID, "SCK0-CP11")  // _UID: Unique ID
@@ -3737,7 +3759,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     }
                 }
 
-                Processor (CP12, 0x17, 0x00000410, 0x06)
+                Processor (CP12, 0xFF, 0x00000410, 0x06)
                 {
                     Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
                     Name (_UID, "SCK0-CP12")  // _UID: Unique ID
@@ -3787,7 +3809,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     }
                 }
 
-                Processor (CP13, 0x19, 0x00000410, 0x06)
+                Processor (CP13, 0xFF, 0x00000410, 0x06)
                 {
                     Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
                     Name (_UID, "SCK0-CP13")  // _UID: Unique ID
@@ -12579,22 +12601,6 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
             {
                 0xFFFF, 
                 0x00, 
-                LNKC, 
-                0x00
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x01, 
-                LNKD, 
-                0x00
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x02, 
                 LNKA, 
                 0x00
             }, 
@@ -12602,8 +12608,24 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
             Package (0x04)
             {
                 0xFFFF, 
-                0x03, 
+                0x01, 
                 LNKB, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x02, 
+                LNKC, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x03, 
+                LNKD, 
                 0x00
             }
         })
@@ -12614,7 +12636,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x00, 
                 0x00, 
-                0x12
+                0x10
             }, 
 
             Package (0x04)
@@ -12622,7 +12644,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x01, 
                 0x00, 
-                0x13
+                0x11
             }, 
 
             Package (0x04)
@@ -12630,7 +12652,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x02, 
                 0x00, 
-                0x10
+                0x12
             }, 
 
             Package (0x04)
@@ -12638,7 +12660,75 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x03, 
                 0x00, 
+                0x13
+            }
+        })
+        Name (PG13, Package (0x04)
+        {
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x00, 
+                LNKD, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x01, 
+                LNKA, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x02, 
+                LNKB, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x03, 
+                LNKC, 
+                0x00
+            }
+        })
+        Name (AG13, Package (0x04)
+        {
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x00, 
+                0x00, 
+                0x13
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x01, 
+                0x00, 
+                0x10
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x02, 
+                0x00, 
                 0x11
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x03, 
+                0x00, 
+                0x12
             }
         })
         Name (PG14, Package (0x04)
@@ -12647,22 +12737,6 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
             {
                 0xFFFF, 
                 0x00, 
-                LNKA, 
-                0x00
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x01, 
-                LNKB, 
-                0x00
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x02, 
                 LNKC, 
                 0x00
             }, 
@@ -12670,8 +12744,24 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
             Package (0x04)
             {
                 0xFFFF, 
-                0x03, 
+                0x01, 
                 LNKD, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x02, 
+                LNKA, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x03, 
+                LNKB, 
                 0x00
             }
         })
@@ -12682,7 +12772,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x00, 
                 0x00, 
-                0x10
+                0x12
             }, 
 
             Package (0x04)
@@ -12690,7 +12780,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x01, 
                 0x00, 
-                0x11
+                0x13
             }, 
 
             Package (0x04)
@@ -12698,7 +12788,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x02, 
                 0x00, 
-                0x12
+                0x10
             }, 
 
             Package (0x04)
@@ -12706,10 +12796,78 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x03, 
                 0x00, 
-                0x13
+                0x11
             }
         })
-        Name (PG16, Package (0x04)
+        Name (PG15, Package (0x04)
+        {
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x00, 
+                LNKB, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x01, 
+                LNKC, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x02, 
+                LNKD, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x03, 
+                LNKA, 
+                0x00
+            }
+        })
+        Name (AG15, Package (0x04)
+        {
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x00, 
+                0x00, 
+                0x11
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x01, 
+                0x00, 
+                0x12
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x02, 
+                0x00, 
+                0x13
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x03, 
+                0x00, 
+                0x10
+            }
+        })
+        Name (PG18, Package (0x04)
         {
             Package (0x04)
             {
@@ -12743,7 +12901,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0x00
             }
         })
-        Name (AG16, Package (0x04)
+        Name (AG18, Package (0x04)
         {
             Package (0x04)
             {
@@ -12775,6 +12933,74 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0x03, 
                 0x00, 
                 0x11
+            }
+        })
+        Name (PG19, Package (0x04)
+        {
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x00, 
+                LNKB, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x01, 
+                LNKC, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x02, 
+                LNKD, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x03, 
+                LNKA, 
+                0x00
+            }
+        })
+        Name (AG19, Package (0x04)
+        {
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x00, 
+                0x00, 
+                0x11
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x01, 
+                0x00, 
+                0x12
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x02, 
+                0x00, 
+                0x13
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x03, 
+                0x00, 
+                0x10
             }
         })
         Name (PD00, Package (0x24)
@@ -13357,210 +13583,6 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0x27
             }
         })
-        Name (PG20, Package (0x04)
-        {
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x00, 
-                LNKA, 
-                0x00
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x01, 
-                LNKB, 
-                0x00
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x02, 
-                LNKC, 
-                0x00
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x03, 
-                LNKD, 
-                0x00
-            }
-        })
-        Name (AG20, Package (0x04)
-        {
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x00, 
-                0x00, 
-                0x1A
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x01, 
-                0x00, 
-                0x1C
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x02, 
-                0x00, 
-                0x1D
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x03, 
-                0x00, 
-                0x1E
-            }
-        })
-        Name (PG21, Package (0x04)
-        {
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x00, 
-                LNKA, 
-                0x00
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x01, 
-                LNKB, 
-                0x00
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x02, 
-                LNKC, 
-                0x00
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x03, 
-                LNKD, 
-                0x00
-            }
-        })
-        Name (AG21, Package (0x04)
-        {
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x00, 
-                0x00, 
-                0x1B
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x01, 
-                0x00, 
-                0x1E
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x02, 
-                0x00, 
-                0x1C
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x03, 
-                0x00, 
-                0x1D
-            }
-        })
-        Name (PG22, Package (0x04)
-        {
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x00, 
-                LNKA, 
-                0x00
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x01, 
-                LNKB, 
-                0x00
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x02, 
-                LNKC, 
-                0x00
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x03, 
-                LNKD, 
-                0x00
-            }
-        })
-        Name (AG22, Package (0x04)
-        {
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x00, 
-                0x00, 
-                0x20
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x01, 
-                0x00, 
-                0x24
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x02, 
-                0x00, 
-                0x25
-            }, 
-
-            Package (0x04)
-            {
-                0xFFFF, 
-                0x03, 
-                0x00, 
-                0x26
-            }
-        })
         Name (PG23, Package (0x04)
         {
             Package (0x04)
@@ -13602,7 +13624,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x00, 
                 0x00, 
-                0x21
+                0x1A
             }, 
 
             Package (0x04)
@@ -13610,7 +13632,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x01, 
                 0x00, 
-                0x25
+                0x1C
             }, 
 
             Package (0x04)
@@ -13618,7 +13640,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x02, 
                 0x00, 
-                0x26
+                0x1D
             }, 
 
             Package (0x04)
@@ -13626,7 +13648,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x03, 
                 0x00, 
-                0x24
+                0x1E
             }
         })
         Name (PG24, Package (0x04)
@@ -13670,7 +13692,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x00, 
                 0x00, 
-                0x22
+                0x1B
             }, 
 
             Package (0x04)
@@ -13678,7 +13700,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x01, 
                 0x00, 
-                0x25
+                0x1E
             }, 
 
             Package (0x04)
@@ -13686,7 +13708,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x02, 
                 0x00, 
-                0x24
+                0x1C
             }, 
 
             Package (0x04)
@@ -13694,7 +13716,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x03, 
                 0x00, 
-                0x26
+                0x1D
             }
         })
         Name (PG25, Package (0x04)
@@ -13738,7 +13760,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x00, 
                 0x00, 
-                0x23
+                0x20
             }, 
 
             Package (0x04)
@@ -13754,7 +13776,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x02, 
                 0x00, 
-                0x26
+                0x25
             }, 
 
             Package (0x04)
@@ -13762,7 +13784,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x03, 
                 0x00, 
-                0x25
+                0x26
             }
         })
         Name (PG26, Package (0x04)
@@ -13806,7 +13828,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x00, 
                 0x00, 
-                0x28
+                0x21
             }, 
 
             Package (0x04)
@@ -13814,7 +13836,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x01, 
                 0x00, 
-                0x2C
+                0x25
             }, 
 
             Package (0x04)
@@ -13822,7 +13844,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x02, 
                 0x00, 
-                0x2D
+                0x26
             }, 
 
             Package (0x04)
@@ -13830,7 +13852,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x03, 
                 0x00, 
-                0x2E
+                0x24
             }
         })
         Name (PG27, Package (0x04)
@@ -13874,7 +13896,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x00, 
                 0x00, 
-                0x29
+                0x22
             }, 
 
             Package (0x04)
@@ -13882,7 +13904,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x01, 
                 0x00, 
-                0x2D
+                0x25
             }, 
 
             Package (0x04)
@@ -13890,7 +13912,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x02, 
                 0x00, 
-                0x2E
+                0x24
             }, 
 
             Package (0x04)
@@ -13898,7 +13920,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x03, 
                 0x00, 
-                0x2C
+                0x26
             }
         })
         Name (PG28, Package (0x04)
@@ -13942,7 +13964,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x00, 
                 0x00, 
-                0x2A
+                0x23
             }, 
 
             Package (0x04)
@@ -13950,7 +13972,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x01, 
                 0x00, 
-                0x2D
+                0x24
             }, 
 
             Package (0x04)
@@ -13958,7 +13980,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x02, 
                 0x00, 
-                0x2C
+                0x26
             }, 
 
             Package (0x04)
@@ -13966,7 +13988,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 0xFFFF, 
                 0x03, 
                 0x00, 
-                0x2E
+                0x25
             }
         })
         Name (PG29, Package (0x04)
@@ -14004,6 +14026,210 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
             }
         })
         Name (AG29, Package (0x04)
+        {
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x00, 
+                0x00, 
+                0x28
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x01, 
+                0x00, 
+                0x2C
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x02, 
+                0x00, 
+                0x2D
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x03, 
+                0x00, 
+                0x2E
+            }
+        })
+        Name (PG2A, Package (0x04)
+        {
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x00, 
+                LNKA, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x01, 
+                LNKB, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x02, 
+                LNKC, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x03, 
+                LNKD, 
+                0x00
+            }
+        })
+        Name (AG2A, Package (0x04)
+        {
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x00, 
+                0x00, 
+                0x29
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x01, 
+                0x00, 
+                0x2D
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x02, 
+                0x00, 
+                0x2E
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x03, 
+                0x00, 
+                0x2C
+            }
+        })
+        Name (PG2B, Package (0x04)
+        {
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x00, 
+                LNKA, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x01, 
+                LNKB, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x02, 
+                LNKC, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x03, 
+                LNKD, 
+                0x00
+            }
+        })
+        Name (AG2B, Package (0x04)
+        {
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x00, 
+                0x00, 
+                0x2A
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x01, 
+                0x00, 
+                0x2D
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x02, 
+                0x00, 
+                0x2C
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x03, 
+                0x00, 
+                0x2E
+            }
+        })
+        Name (PG2C, Package (0x04)
+        {
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x00, 
+                LNKA, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x01, 
+                LNKB, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x02, 
+                LNKC, 
+                0x00
+            }, 
+
+            Package (0x04)
+            {
+                0xFFFF, 
+                0x03, 
+                LNKD, 
+                0x00
+            }
+        })
+        Name (AG2C, Package (0x04)
         {
             Package (0x04)
             {
@@ -15246,10 +15472,10 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     ,, _Y00, AddressRangeMemory, TypeStatic)
                 QWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, NonCacheable, ReadWrite,
                     0x0000000000000000, // Granularity
-                    0x0000380000000000, // Range Minimum
-                    0x0000383FFFFFFFFF, // Range Maximum
+                    0x0000000000000000, // Range Minimum
+                    0x0000000000000000, // Range Maximum
                     0x0000000000000000, // Translation Offset
-                    0x0000004000000000, // Length
+                    0x0000000000000000, // Length
                     ,, , AddressRangeMemory, TypeStatic)
             })
             OperationRegion (TMEM, PCI_Config, 0x00, 0x0100)
@@ -16663,32 +16889,17 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                     Method (SIOS, 1, NotSerialized)
                     {
                         Debug = "SIOS"
-                        If ((0x05 != Arg0))
-                        {
-                            ENFG (0x0A)
-                            OPT3 = 0xFF
-                            OPT4 = 0xFF
-                            If (KBFG)
-                            {
-                                OPT6 |= 0x10
-                            }
-                            Else
-                            {
-                                OPT6 &= 0xEF
-                            }
-
-                            If (MSFG)
-                            {
-                                OPT6 |= 0x20
-                            }
-                            Else
-                            {
-                                OPT6 &= 0xDF
-                            }
-
-                            OPT2 |= 0x01 /* \_SB_.PCI0.LPC0.SIO1.OPT2 */
-                            EXFG ()
-                        }
+                        ENFG (0x0A)
+                        PMFG = OPT3 /* \_SB_.PCI0.LPC0.SIO1.OPT3 */
+                        OPT3 = 0xFF
+                        OPT4 = 0xFF
+                        OPT6 &= 0xCF
+                        OPT6 |= 0x10
+                        OPT6 |= 0x20
+                        OPT3 = 0xFF
+                        OPT4 = 0xFF
+                        OPT2 |= 0x01 /* \_SB_.PCI0.LPC0.SIO1.OPT2 */
+                        EXFG ()
                     }
 
                     Method (SIOW, 1, NotSerialized)
@@ -16697,6 +16908,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                         ENFG (0x0A)
                         PMFG = OPT3 /* \_SB_.PCI0.LPC0.SIO1.OPT3 */
                         OPT3 = 0xFF
+                        OPT4 = 0xFF
                         OPT6 &= 0xCF
                         OPT2 &= 0xFE /* \_SB_.PCI0.LPC0.SIO1.OPT2 */
                         EXFG ()
@@ -16772,12 +16984,12 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
 
                     Scope (\)
                     {
-                        Name (KBFG, 0x01)
+                        Name (KBFG, 0x00)
                     }
 
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW (0x1D, 0x03))
+                        Return (GPRW (0x0E, 0x03))
                     }
                 }
 
@@ -16854,7 +17066,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
 
                     Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
-                        Return (GPRW (0x1D, 0x03))
+                        Return (GPRW (0x0E, 0x03))
                     }
                 }
 
@@ -22404,6 +22616,21 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 {
                     Return (GPRW (0x09, 0x04))
                 }
+
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
+                {
+                    If (PICM)
+                    {
+                        Return (AG12) /* \_SB_.AG12 */
+                    }
+
+                    Return (PG12) /* \_SB_.PG12 */
+                }
+
+                Device (D074)
+                {
+                    Name (_ADR, 0xFF)  // _ADR: Address
+                }
             }
 
             Device (RP02)
@@ -22468,6 +22695,21 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x09, 0x04))
+                }
+
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
+                {
+                    If (PICM)
+                    {
+                        Return (AG13) /* \_SB_.AG13 */
+                    }
+
+                    Return (PG13) /* \_SB_.PG13 */
+                }
+
+                Device (D075)
+                {
+                    Name (_ADR, 0xFFFF)  // _ADR: Address
                 }
             }
 
@@ -22539,18 +22781,13 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 {
                     If (PICM)
                     {
-                        Return (AG12) /* \_SB_.AG12 */
+                        Return (AG14) /* \_SB_.AG14 */
                     }
 
-                    Return (PG12) /* \_SB_.PG12 */
+                    Return (PG14) /* \_SB_.PG14 */
                 }
 
-                Device (D07B)
-                {
-                    Name (_ADR, 0xFF)  // _ADR: Address
-                }
-
-                Device (D07C)
+                Device (D082)
                 {
                     Name (_ADR, 0xFF)  // _ADR: Address
                 }
@@ -22619,6 +22856,35 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 {
                     Return (GPRW (0x09, 0x04))
                 }
+
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
+                {
+                    If (PICM)
+                    {
+                        Return (AG15) /* \_SB_.AG15 */
+                    }
+
+                    Return (PG15) /* \_SB_.PG15 */
+                }
+
+                Device (D073)
+                {
+                    Name (_ADR, 0xFF)  // _ADR: Address
+                }
+
+                Device (D081)
+                {
+                    Name (_ADR, 0xFF)  // _ADR: Address
+                }
+
+                Device (RTLG)
+                {
+                    Name (_ADR, 0x00)  // _ADR: Address
+                    Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
+                    {
+                        Return (GPRW (0x0D, 0x04))
+                    }
+                }
             }
 
             Device (RP05)
@@ -22683,21 +22949,6 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x09, 0x04))
-                }
-
-                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
-                {
-                    If (PICM)
-                    {
-                        Return (AG14) /* \_SB_.AG14 */
-                    }
-
-                    Return (PG14) /* \_SB_.PG14 */
-                }
-
-                Device (D070)
-                {
-                    Name (_ADR, 0xFF)  // _ADR: Address
                 }
             }
 
@@ -22834,13 +23085,13 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 {
                     If (PICM)
                     {
-                        Return (AG16) /* \_SB_.AG16 */
+                        Return (AG18) /* \_SB_.AG18 */
                     }
 
-                    Return (PG16) /* \_SB_.PG16 */
+                    Return (PG18) /* \_SB_.PG18 */
                 }
 
-                Device (D07D)
+                Device (D083)
                 {
                     Name (_ADR, 0xFF)  // _ADR: Address
                 }
@@ -22908,6 +23159,30 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x09, 0x04))
+                }
+
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
+                {
+                    If (PICM)
+                    {
+                        Return (AG19) /* \_SB_.AG19 */
+                    }
+
+                    Return (PG19) /* \_SB_.PG19 */
+                }
+
+                Device (D080)
+                {
+                    Name (_ADR, 0xFF)  // _ADR: Address
+                }
+
+                Device (RTLA)
+                {
+                    Name (_ADR, 0x00)  // _ADR: Address
+                    Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
+                    {
+                        Return (GPRW (0x0D, 0x04))
+                    }
                 }
             }
 
@@ -24284,13 +24559,13 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 {
                     If (PICM)
                     {
-                        Return (AG20) /* \_SB_.AG20 */
+                        Return (AG23) /* \_SB_.AG23 */
                     }
 
-                    Return (PG20) /* \_SB_.PG20 */
+                    Return (PG23) /* \_SB_.PG23 */
                 }
 
-                Device (D075)
+                Device (D07A)
                 {
                     Name (_ADR, 0xFFFF)  // _ADR: Address
                 }
@@ -24923,13 +25198,13 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 {
                     If (PICM)
                     {
-                        Return (AG21) /* \_SB_.AG21 */
+                        Return (AG24) /* \_SB_.AG24 */
                     }
 
-                    Return (PG21) /* \_SB_.PG21 */
+                    Return (PG24) /* \_SB_.PG24 */
                 }
 
-                Device (D076)
+                Device (D07B)
                 {
                     Name (_ADR, 0xFFFF)  // _ADR: Address
                 }
@@ -25562,13 +25837,13 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 {
                     If (PICM)
                     {
-                        Return (AG22) /* \_SB_.AG22 */
+                        Return (AG25) /* \_SB_.AG25 */
                     }
 
-                    Return (PG22) /* \_SB_.PG22 */
+                    Return (PG25) /* \_SB_.PG25 */
                 }
 
-                Device (D071)
+                Device (D076)
                 {
                     Name (_ADR, 0xFFFF)  // _ADR: Address
                 }
@@ -26201,13 +26476,13 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 {
                     If (PICM)
                     {
-                        Return (AG23) /* \_SB_.AG23 */
+                        Return (AG26) /* \_SB_.AG26 */
                     }
 
-                    Return (PG23) /* \_SB_.PG23 */
+                    Return (PG26) /* \_SB_.PG26 */
                 }
 
-                Device (D072)
+                Device (D077)
                 {
                     Name (_ADR, 0xFFFF)  // _ADR: Address
                 }
@@ -26840,13 +27115,13 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 {
                     If (PICM)
                     {
-                        Return (AG24) /* \_SB_.AG24 */
+                        Return (AG27) /* \_SB_.AG27 */
                     }
 
-                    Return (PG24) /* \_SB_.PG24 */
+                    Return (PG27) /* \_SB_.PG27 */
                 }
 
-                Device (D073)
+                Device (D078)
                 {
                     Name (_ADR, 0xFFFF)  // _ADR: Address
                 }
@@ -27479,13 +27754,13 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 {
                     If (PICM)
                     {
-                        Return (AG25) /* \_SB_.AG25 */
+                        Return (AG28) /* \_SB_.AG28 */
                     }
 
-                    Return (PG25) /* \_SB_.PG25 */
+                    Return (PG28) /* \_SB_.PG28 */
                 }
 
-                Device (D074)
+                Device (D079)
                 {
                     Name (_ADR, 0xFFFF)  // _ADR: Address
                 }
@@ -28118,13 +28393,13 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 {
                     If (PICM)
                     {
-                        Return (AG26) /* \_SB_.AG26 */
+                        Return (AG29) /* \_SB_.AG29 */
                     }
 
-                    Return (PG26) /* \_SB_.PG26 */
+                    Return (PG29) /* \_SB_.PG29 */
                 }
 
-                Device (D077)
+                Device (D07C)
                 {
                     Name (_ADR, 0xFFFF)  // _ADR: Address
                 }
@@ -28757,13 +29032,13 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 {
                     If (PICM)
                     {
-                        Return (AG27) /* \_SB_.AG27 */
+                        Return (AG2A) /* \_SB_.AG2A */
                     }
 
-                    Return (PG27) /* \_SB_.PG27 */
+                    Return (PG2A) /* \_SB_.PG2A */
                 }
 
-                Device (D078)
+                Device (D07D)
                 {
                     Name (_ADR, 0xFFFF)  // _ADR: Address
                 }
@@ -29396,13 +29671,13 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 {
                     If (PICM)
                     {
-                        Return (AG28) /* \_SB_.AG28 */
+                        Return (AG2B) /* \_SB_.AG2B */
                     }
 
-                    Return (PG28) /* \_SB_.PG28 */
+                    Return (PG2B) /* \_SB_.PG2B */
                 }
 
-                Device (D079)
+                Device (D07E)
                 {
                     Name (_ADR, 0xFFFF)  // _ADR: Address
                 }
@@ -30035,13 +30310,13 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
                 {
                     If (PICM)
                     {
-                        Return (AG29) /* \_SB_.AG29 */
+                        Return (AG2C) /* \_SB_.AG2C */
                     }
 
-                    Return (PG29) /* \_SB_.PG29 */
+                    Return (PG2C) /* \_SB_.PG2C */
                 }
 
-                Device (D07A)
+                Device (D07F)
                 {
                     Name (_ADR, 0xFFFF)  // _ADR: Address
                 }
@@ -52179,6 +52454,8 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
             Notify (\_SB.PCI0.XHCI, 0x02) // Device Wake
             Notify (\_SB.PCI0.EHC1, 0x02) // Device Wake
             Notify (\_SB.PCI0.EHC2, 0x02) // Device Wake
+            Notify (\_SB.PCI0.RP04.RTLG, 0x02) // Device Wake
+            Notify (\_SB.PCI0.RP08.RTLA, 0x02) // Device Wake
             Notify (\_SB.PWRB, 0x02) // Device Wake
         }
     }
@@ -52228,6 +52505,7 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
             \_SB.PCI0.LPC0.SIO1.SIOS (Arg0)
             \_SB.PCI0.LPC0.SPTS (Arg0)
             IPTS (Arg0)
+            \_SB.TPM.TPTS (Arg0)
         }
     }
 
@@ -53565,6 +53843,418 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
         }
     }
 
+    Device (_SB.TPM)
+    {
+        Method (_HID, 0, NotSerialized)  // _HID: Hardware ID
+        {
+            If (TCMF)
+            {
+                Return (0x01013469)
+            }
+            ElseIf ((TTDP == 0x00))
+            {
+                Return (0x310CD041)
+            }
+            Else
+            {
+                Return ("MSFT0101")
+            }
+        }
+
+        Method (_STR, 0, NotSerialized)  // _STR: Description String
+        {
+            If ((TTDP == 0x00))
+            {
+                Return (Unicode ("TPM 1.2 Device"))
+            }
+            Else
+            {
+                Return (Unicode ("TPM 2.0 Device"))
+            }
+        }
+
+        Name (_UID, 0x01)  // _UID: Unique ID
+        Name (CRST, ResourceTemplate ()
+        {
+            Memory32Fixed (ReadOnly,
+                0x00000000,         // Address Base
+                0x00001000,         // Address Length
+                _Y10)
+            Memory32Fixed (ReadOnly,
+                0xFED70000,         // Address Base
+                0x00001000,         // Address Length
+                _Y11)
+        })
+        Name (CRSD, ResourceTemplate ()
+        {
+            Memory32Fixed (ReadWrite,
+                0xFED40000,         // Address Base
+                0x00005000,         // Address Length
+                _Y12)
+        })
+        Name (CRSI, ResourceTemplate ()
+        {
+            Memory32Fixed (ReadWrite,
+                0xFED40000,         // Address Base
+                0x00005000,         // Address Length
+                _Y13)
+        })
+        Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+        {
+            If ((AMDT == 0x01))
+            {
+                CreateDWordField (CRST, \_SB.TPM._Y10._BAS, MTFB)  // _BAS: Base Address
+                CreateDWordField (CRST, \_SB.TPM._Y10._LEN, LTFB)  // _LEN: Length
+                MTFB = TPMB /* \TPMB */
+                LTFB = 0x1000
+                CreateDWordField (CRST, \_SB.TPM._Y11._BAS, MTFC)  // _BAS: Base Address
+                CreateDWordField (CRST, \_SB.TPM._Y11._LEN, LTFC)  // _LEN: Length
+                MTFC = TPMC /* \TPMC */
+                LTFC = 0x1000
+                Return (CRST) /* \_SB_.TPM_.CRST */
+            }
+            Else
+            {
+                If ((DTPT == 0x01))
+                {
+                    CreateDWordField (CRSD, \_SB.TPM._Y12._BAS, MTFE)  // _BAS: Base Address
+                    CreateDWordField (CRSD, \_SB.TPM._Y12._LEN, LTFE)  // _LEN: Length
+                    MTFE = 0xFED40000
+                    LTFE = 0x0880
+                    Return (CRSD) /* \_SB_.TPM_.CRSD */
+                }
+                ElseIf ((TTPF == 0x01))
+                {
+                    CreateDWordField (CRSI, \_SB.TPM._Y13._BAS, MTFD)  // _BAS: Base Address
+                    CreateDWordField (CRSI, \_SB.TPM._Y13._LEN, LTFD)  // _LEN: Length
+                    MTFD = 0xFED40000
+                    LTFD = 0x5000
+                    Return (CRSI) /* \_SB_.TPM_.CRSI */
+                }
+                ElseIf ((TTPF == 0x00))
+                {
+                    CreateDWordField (CRSI, \_SB.TPM._Y13._BAS, MTFF)  // _BAS: Base Address
+                    MTFF = TPMM /* \TPMM */
+                    Return (CRSI) /* \_SB_.TPM_.CRSI */
+                }
+
+                MTFE = 0x00
+                LTFE = 0x00
+                Return (CRSI) /* \_SB_.TPM_.CRSI */
+            }
+
+            Return (CRSI) /* \_SB_.TPM_.CRSI */
+        }
+
+        OperationRegion (TMMB, SystemMemory, 0xFED40000, 0x5000)
+        Field (TMMB, ByteAcc, Lock, Preserve)
+        {
+            Offset (0x04), 
+            LCST,   32, 
+            Offset (0x40), 
+            CREQ,   32, 
+            CSTS,   32, 
+            Offset (0x4C), 
+            SCMD,   32
+        }
+
+        OperationRegion (CRBD, SystemMemory, TPMM, 0x48)
+        Field (CRBD, AnyAcc, NoLock, Preserve)
+        {
+            Offset (0x04), 
+            HERR,   32, 
+            Offset (0x40), 
+            HCMD,   32, 
+            HSTS,   32
+        }
+
+        Method (_STA, 0, NotSerialized)  // _STA: Status
+        {
+            If ((TTDP == 0x00))
+            {
+                If (TPMF)
+                {
+                    Return (0x0F)
+                }
+
+                Return (0x00)
+            }
+            ElseIf ((TTDP == 0x01))
+            {
+                If (TPMF)
+                {
+                    Return (0x0F)
+                }
+
+                Return (0x00)
+            }
+
+            Return (0x00)
+        }
+
+        Method (STRT, 3, Serialized)
+        {
+            OperationRegion (TPMR, SystemMemory, FTPM, 0x1000)
+            Field (TPMR, AnyAcc, NoLock, Preserve)
+            {
+                Offset (0x04), 
+                FERR,   32, 
+                Offset (0x0C), 
+                BEGN,   32
+            }
+
+            Name (TIMR, 0x00)
+            If ((ToInteger (Arg0) != 0x00)){}
+            Switch (ToInteger (Arg1))
+            {
+                Case (0x00)
+                {
+                    Return (Buffer (0x01)
+                    {
+                         0x03                                             // .
+                    })
+                }
+                Case (0x01)
+                {
+                    TIMR = 0x00
+                    If ((AMDT == 0x01))
+                    {
+                        While (((BEGN == One) && (TIMR < 0x0200)))
+                        {
+                            If ((BEGN == One))
+                            {
+                                Sleep (0x01)
+                                TIMR++
+                            }
+                        }
+                    }
+                    ElseIf ((((HSTS & 0x02) | (HSTS & 0x01)
+                        ) == 0x03))
+                    {
+                        HCMD = 0x01
+                    }
+                    Else
+                    {
+                        FERR = 0x01
+                        BEGN = 0x00
+                    }
+
+                    Return (Zero)
+                }
+
+            }
+
+            Return (0x01)
+        }
+
+        Method (CRYF, 3, Serialized)
+        {
+            If ((ToInteger (Arg0) != 0x01)){}
+            Switch (ToInteger (Arg1))
+            {
+                Case (0x00)
+                {
+                    Return (Buffer (0x01)
+                    {
+                         0x03                                             // .
+                    })
+                }
+                Case (0x01)
+                {
+                    Name (TPMV, Package (0x02)
+                    {
+                        0x01, 
+                        Package (0x02)
+                        {
+                            0x01, 
+                            0x20
+                        }
+                    })
+                    If ((_STA () == 0x00))
+                    {
+                        Return (Package (0x01)
+                        {
+                            0x00
+                        })
+                    }
+
+                    Return (TPMV) /* \_SB_.TPM_.CRYF.TPMV */
+                }
+
+            }
+
+            Return (Buffer (0x01)
+            {
+                 0x00                                             // .
+            })
+        }
+    }
+
+    Scope (_SB.TPM)
+    {
+        OperationRegion (TSMI, SystemIO, SMIA, 0x02)
+        Field (TSMI, WordAcc, NoLock, Preserve)
+        {
+            SMI,    16
+        }
+
+        OperationRegion (ATNV, SystemMemory, PPIM, PPIL)
+        Field (ATNV, AnyAcc, NoLock, Preserve)
+        {
+            RQST,   32, 
+            RCNT,   32, 
+            ERRO,   32, 
+            FLAG,   32, 
+            MISC,   32, 
+            OPTN,   32, 
+            SRSP,   32
+        }
+
+        Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
+        {
+            If ((Arg0 == ToUUID ("3dddfaa6-361b-4eb4-a424-8d10089d1653") /* Physical Presence Interface */))
+            {
+                Switch (ToInteger (Arg2))
+                {
+                    Case (0x00)
+                    {
+                        Return (Buffer (0x02)
+                        {
+                             0xFF, 0x01                                       // ..
+                        })
+                    }
+                    Case (0x01)
+                    {
+                        If ((PPIV == 0x00))
+                        {
+                            Return ("1.2")
+                        }
+                        Else
+                        {
+                            Return ("1.3")
+                        }
+                    }
+                    Case (0x02)
+                    {
+                        RQST = DerefOf (Arg3 [0x00])
+                        SRSP = 0x00
+                        FLAG = 0x02
+                        TMF1 = OFST /* \OFST */
+                        SRSP = 0x00
+                        SMI = TMF1 /* \TMF1 */
+                        Return (SRSP) /* \_SB_.TPM_.SRSP */
+                    }
+                    Case (0x03)
+                    {
+                        Name (PPI1, Package (0x02)
+                        {
+                            0x00, 
+                            0x00
+                        })
+                        PPI1 [0x01] = RQST /* \_SB_.TPM_.RQST */
+                        Return (PPI1) /* \_SB_.TPM_._DSM.PPI1 */
+                    }
+                    Case (0x04)
+                    {
+                        Return (TRST) /* \TRST */
+                    }
+                    Case (0x05)
+                    {
+                        Name (PPI2, Package (0x03)
+                        {
+                            0x00, 
+                            0x00, 
+                            0x00
+                        })
+                        SRSP = 0x00
+                        FLAG = 0x05
+                        SMI = OFST /* \OFST */
+                        PPI2 [0x01] = RCNT /* \_SB_.TPM_.RCNT */
+                        PPI2 [0x02] = ERRO /* \_SB_.TPM_.ERRO */
+                        Return (PPI2) /* \_SB_.TPM_._DSM.PPI2 */
+                    }
+                    Case (0x06)
+                    {
+                        Return (0x03)
+                    }
+                    Case (0x07)
+                    {
+                        RQST = DerefOf (Arg3 [0x00])
+                        FLAG = 0x07
+                        OPTN = 0x00
+                        If ((RQST == 0x17))
+                        {
+                            ToInteger (DerefOf (Arg3 [0x01]), OPTN) /* \_SB_.TPM_.OPTN */
+                        }
+
+                        TMF1 = OFST /* \OFST */
+                        SRSP = 0x00
+                        SMI = TMF1 /* \TMF1 */
+                        Return (SRSP) /* \_SB_.TPM_.SRSP */
+                    }
+                    Case (0x08)
+                    {
+                        RQST = DerefOf (Arg3 [0x00])
+                        FLAG = 0x08
+                        TMF1 = OFST /* \OFST */
+                        SRSP = 0x00
+                        SMI = TMF1 /* \TMF1 */
+                        Return (SRSP) /* \_SB_.TPM_.SRSP */
+                    }
+                    Default
+                    {
+                    }
+
+                }
+            }
+            ElseIf ((Arg0 == ToUUID ("376054ed-cc13-4675-901c-4756d7f2d45d") /* TPM Memory Clear */))
+            {
+                Switch (ToInteger (Arg2))
+                {
+                    Case (0x00)
+                    {
+                        Return (Buffer (0x01)
+                        {
+                             0x03                                             // .
+                        })
+                    }
+                    Case (0x01)
+                    {
+                        RQST = DerefOf (Arg3 [0x00])
+                        FLAG = 0x09
+                        TMF1 = OFST /* \OFST */
+                        SRSP = 0x00
+                        SMI = TMF1 /* \TMF1 */
+                        Return (SRSP) /* \_SB_.TPM_.SRSP */
+                    }
+                    Default
+                    {
+                    }
+
+                }
+            }
+
+            If ((Arg0 == ToUUID ("cf8e16a5-c1e8-4e25-b712-4f54a96702c8") /* TPM Hardware Information */))
+            {
+                Return (CRYF (Arg1, Arg2, Arg3))
+            }
+
+            If ((Arg0 == ToUUID ("6bbf6cab-5463-4714-b7cd-f0203c0368d4") /* TPM Start Method */))
+            {
+                Return (STRT (Arg1, Arg2, Arg3))
+            }
+
+            Return (Buffer (0x01)
+            {
+                 0x00                                             // .
+            })
+        }
+
+        Method (TPTS, 1, NotSerialized)
+        {
+        }
+    }
+
     OperationRegion (_SB.PCI0.LPC0.PIX0, PCI_Config, 0x60, 0x0C)
     Field (\_SB.PCI0.LPC0.PIX0, ByteAcc, NoLock, Preserve)
     {
@@ -53583,10 +54273,10 @@ DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I ", 0x01072009)
     {
         Name (BUFA, ResourceTemplate ()
         {
-            IRQ (Level, ActiveLow, Shared, _Y10)
+            IRQ (Level, ActiveLow, Shared, _Y14)
                 {15}
         })
-        CreateWordField (BUFA, \_SB._Y10._INT, IRA0)  // _INT: Interrupts
+        CreateWordField (BUFA, \_SB._Y14._INT, IRA0)  // _INT: Interrupts
         Device (LNKA)
         {
             Name (_HID, EisaId ("PNP0C0F") /* PCI Interrupt Link Device */)  // _HID: Hardware ID

@@ -1,0 +1,29 @@
+## SPDX-License-Identifier: GPL-2.0-or-later
+
+chip northbridge/intel/grantley
+	device domain 0x0 on
+		device pci 01.1 on end # PCIe Root Port 1b (x16 slot bifurcation, empty on this board)
+		chip southbridge/intel/lynxpoint
+			register "sata_port_map" = "0x30" # Stock maps the drive ports to silicon ports 4/5
+			device pci 1c.2 on end # PCIe Port 3 (Realtek RTL8168 onboard LAN)
+			device pci 1f.0 on # LPC bridge
+				chip superio/nuvoton/nct5539d
+					device pnp 2e.2 on # UART A
+						io  0x60 = 0x3f8
+						irq 0x70 = 4
+					end
+					device pnp 2e.5 on # PS/2 KBC
+						io  0x60 = 0x60
+						io  0x62 = 0x64
+						irq 0x70 = 1
+						irq 0x72 = 12
+					end
+					device pnp 2e.b on # HW Monitor
+						io  0x60 = 0xa20
+						irq 0x70 = 0
+					end
+				end
+			end
+		end
+	end
+end

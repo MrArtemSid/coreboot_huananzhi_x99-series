@@ -1,8 +1,7 @@
 /*
  * 
  * Intel ACPI Component Architecture
- * ASL+ Optimizing Compiler/Disassembler version 20221020 (64-bit version)
- * Copyright (c) 2000 - 2022 Intel Corporation
+ * ASL+ Optimizing Compiler/Disassembler version 20251212 (64-bit version)
+ * Copyright (c) 2000 - 2025 Intel Corporation
  * 
- * Compilation of "dsdt.dsl" - Mon Jul 31 17:01:51 2023
- * 
+ * Compilation of "qd4_new.dsl"

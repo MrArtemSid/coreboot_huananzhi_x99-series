@@ -2,6 +2,12 @@
 
 #include <southbridge/intel/common/gpio.h>
 
+/*
+ * Map recovered from the vendor firmware's post-POST GPIO state on this board
+ * (stock AMI 2022, read from a running OS); not a cold-boot trace, so the
+ * reset values are unvalidated.
+ */
+
 static const struct pch_gpio_set1 pch_gpio_set1_mode = {
 	.gpio0 = GPIO_MODE_GPIO,
 	.gpio1 = GPIO_MODE_NATIVE,
@@ -78,7 +84,7 @@ static const struct pch_gpio_set1 pch_gpio_set1_blink = {
 static const struct pch_gpio_set2 pch_gpio_set2_mode = {
 	.gpio32 = GPIO_MODE_GPIO,
 	.gpio33 = GPIO_MODE_NATIVE,
-	.gpio34 = GPIO_MODE_GPIO,
+	.gpio34 = GPIO_MODE_NATIVE,
 	.gpio35 = GPIO_MODE_GPIO,
 	.gpio36 = GPIO_MODE_GPIO,
 	.gpio37 = GPIO_MODE_NATIVE,
@@ -112,12 +118,11 @@ static const struct pch_gpio_set2 pch_gpio_set2_mode = {
 
 static const struct pch_gpio_set2 pch_gpio_set2_direction = {
 	.gpio32 = GPIO_DIR_OUTPUT,
-	.gpio34 = GPIO_DIR_INPUT,
 	.gpio35 = GPIO_DIR_OUTPUT,
 	.gpio36 = GPIO_DIR_OUTPUT,
 	.gpio44 = GPIO_DIR_INPUT,
 	.gpio46 = GPIO_DIR_INPUT,
-	.gpio50 = GPIO_DIR_INPUT,
+	.gpio50 = GPIO_DIR_OUTPUT,
 	.gpio51 = GPIO_DIR_OUTPUT,
 	.gpio52 = GPIO_DIR_OUTPUT,
 	.gpio53 = GPIO_DIR_OUTPUT,
@@ -130,6 +135,7 @@ static const struct pch_gpio_set2 pch_gpio_set2_level = {
 	.gpio32 = GPIO_LEVEL_LOW,
 	.gpio35 = GPIO_LEVEL_LOW,
 	.gpio36 = GPIO_LEVEL_HIGH,
+	.gpio50 = GPIO_LEVEL_LOW,
 	.gpio51 = GPIO_LEVEL_HIGH,
 	.gpio52 = GPIO_LEVEL_LOW,
 	.gpio53 = GPIO_LEVEL_LOW,
